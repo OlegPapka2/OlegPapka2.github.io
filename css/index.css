@@ -215,6 +215,16 @@ footer #contacts a:hover > i {
   justify-items: center;
   gap: 50px;
 }
+.fullscreen-card .photo {
+  height: 100%;
+}
+.fullscreen-card .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-width: 370px;
+  min-height: 300px;
+}
 @media screen and (max-width: 960px) {
   .fullscreen-card {
     display: flex;
