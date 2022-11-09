@@ -1,0 +1,218 @@
+// ==== Variables ====
+
+// Dark theme
+$background: #0e1217
+
+$text_heading: #EEFBFB
+$text_main: #a2bbbb
+
+$item_main: #1c1f26
+$item_incidental: #353944
+
+// Light theme
+$background: #ffffff
+
+$text_heading: #222222
+$text_main: #353535
+
+$item_main: #e1e3e9
+$item_incidental: #9799A5
+
+$accent_b: #005EB8
+$accent_y: #FFD101
+
+$font_heading: 'Montserrat', sans-serif
+$font_main: 'Ubuntu', sans-serif
+
+// ==== Reset ====
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html
+  height: 100%
+  width: 100%
+
+body
+  height: 100%
+  width: 100%
+  background-color: $background
+
+h1
+  font: 28px $font_heading
+  font-weight: 700
+  color: $text_heading
+  margin: 0 0 20px
+  line-height: 3rem
+
+h2
+  font: 20px $font_heading
+  font-weight: 400
+  color: $text_heading
+  margin: 0 0 15px
+  line-height: 2.5rem
+
+p
+  font: 18px $font_main
+  font-weight: 400
+  color: $text_main
+  margin: 0 0 8px
+  line-height: 1.6rem
+
+a
+  text-decoration: none
+  color: $accent_b
+
+ul
+  list-style: none
+
+span
+  font-style: italic
+  font-weight: 300
+
+img
+  font: 18px $font_main
+  font-weight: 400
+  color: $text_main
+
+#body-wrapper
+  min-height: 100vh
+
+nav
+  width: 100%
+  height: 100px
+  background-color: $item_main
+  margin-bottom: 50px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 0 15%
+
+  @media screen and (max-width: 1250px)
+    padding: 0 7%
+
+  h1, p
+    line-height: 1em
+    margin: 0
+    font-weight: 700
+
+  #nav-logo
+    display: flex
+    align-items: center
+
+    #logo-img
+      width: 70px
+      height: 70px
+      margin-right: 20px
+      overflow: hidden
+      border-radius: 15px
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        transition: ease-in-out 0.3s
+
+    &:hover > #logo-img
+      background-image: url('/img/flag_small.png')
+      background-size: cover
+
+    &:hover > #logo-img img
+      opacity: 70%
+      transition: ease-in-out 0.3s
+
+  #nav-links
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 40px
+
+    li
+      &:hover > p::after
+        transition: all ease-in-out 0.3s
+        width: 100%
+
+      p
+        font-size: 20px
+        line-height: 1em
+
+        &::after
+          transition: all ease-in-out 0.3s
+          content: ""
+          position: relative
+          display: block
+          left: 0
+          top: 7px
+          height: 3px
+          width: 0px
+          background-color: $accent_b
+
+      #underlined
+        &::after
+          width: 100%
+
+    a:nth-child(2n)
+      li p::after
+        background-color: $accent_y
+
+  @media screen and (max-width: 700px)
+    #nav-links
+      display: none
+
+    #nav-logo #logo-img img
+      opacity: 100%
+
+footer
+  height: 100px
+  background-color: $item_main
+  display: flex
+  justify-content: center
+  align-items: center
+
+  p
+    line-height: 1em
+    margin-bottom: 0
+
+  @media screen and (max-width: 700px)
+    height: 140px
+
+  #footer-wrapper
+    width: 60%
+    max-width: 550px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    @media screen and (max-width: 1250px)
+      width: 75%
+
+    @media screen and (max-width: 700px)
+      height: 100%
+      padding: 25px 0
+      flex-direction: column-reverse
+      justify-content: space-between
+
+  #contacts
+    a
+      margin: 0 18px
+      color: $item_incidental
+
+      i
+        background-image: url('/img/back_incidental.png')
+        background-size: cover
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        transition: ease-in-out 0.25s
+
+      &:hover > i
+        // color: $text_main
+        background-image: url('/img/flag_small.png')
+        background-size: cover
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+        transition: ease-in-out 0.25s
+
+    @media screen and (min-width: 700px)
+      transform: scale(80%)

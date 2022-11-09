@@ -1,0 +1,351 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+h1 {
+  font: 28px "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 20px;
+  line-height: 3rem;
+}
+
+h2 {
+  font: 20px "Montserrat", sans-serif;
+  font-weight: 400;
+  color: #222222;
+  margin: 0 0 15px;
+  line-height: 2.5rem;
+}
+
+p {
+  font: 18px "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: #353535;
+  margin: 0 0 8px;
+  line-height: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: #005EB8;
+}
+
+ul {
+  list-style: none;
+}
+
+span {
+  font-style: italic;
+  font-weight: 300;
+}
+
+img {
+  font: 18px "Ubuntu", sans-serif;
+  font-weight: 400;
+  color: #353535;
+}
+
+#body-wrapper {
+  min-height: 100vh;
+}
+
+nav {
+  width: 100%;
+  height: 100px;
+  background-color: #e1e3e9;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15%;
+}
+@media screen and (max-width: 1250px) {
+  nav {
+    padding: 0 7%;
+  }
+}
+nav h1, nav p {
+  line-height: 1em;
+  margin: 0;
+  font-weight: 700;
+}
+nav #nav-logo {
+  display: flex;
+  align-items: center;
+}
+nav #nav-logo #logo-img {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+nav #nav-logo #logo-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: ease-in-out 0.3s;
+}
+nav #nav-logo:hover > #logo-img {
+  background-image: url("/img/flag_small.png");
+  background-size: cover;
+}
+nav #nav-logo:hover > #logo-img img {
+  opacity: 70%;
+  transition: ease-in-out 0.3s;
+}
+nav #nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+nav #nav-links li:hover > p::after {
+  transition: all ease-in-out 0.3s;
+  width: 100%;
+}
+nav #nav-links li p {
+  font-size: 20px;
+  line-height: 1em;
+}
+nav #nav-links li p::after {
+  transition: all ease-in-out 0.3s;
+  content: "";
+  position: relative;
+  display: block;
+  left: 0;
+  top: 7px;
+  height: 3px;
+  width: 0px;
+  background-color: #005EB8;
+}
+nav #nav-links li #underlined::after {
+  width: 100%;
+}
+nav #nav-links a:nth-child(2n) li p::after {
+  background-color: #FFD101;
+}
+@media screen and (max-width: 700px) {
+  nav #nav-links {
+    display: none;
+  }
+  nav #nav-logo #logo-img img {
+    opacity: 100%;
+  }
+}
+
+footer {
+  height: 100px;
+  background-color: #e1e3e9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer p {
+  line-height: 1em;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 700px) {
+  footer {
+    height: 140px;
+  }
+}
+footer #footer-wrapper {
+  width: 60%;
+  max-width: 550px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1250px) {
+  footer #footer-wrapper {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 700px) {
+  footer #footer-wrapper {
+    height: 100%;
+    padding: 25px 0;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+  }
+}
+footer #contacts a {
+  margin: 0 18px;
+  color: #9799A5;
+}
+footer #contacts a i {
+  background-image: url("/img/back_incidental.png");
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: ease-in-out 0.25s;
+}
+footer #contacts a:hover > i {
+  background-image: url("/img/flag_small.png");
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: ease-in-out 0.25s;
+}
+@media screen and (min-width: 700px) {
+  footer #contacts {
+    transform: scale(80%);
+  }
+}
+
+.fullscreen-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 50px;
+}
+@media screen and (max-width: 960px) {
+  .fullscreen-card {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.article-title {
+  padding: 0 15%;
+  margin: 60px 0 0;
+}
+@media screen and (max-width: 1250px) {
+  .article-title {
+    padding: 0 7%;
+  }
+}
+
+article {
+  margin: 0 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 35px;
+  padding: 0 15%;
+}
+@media screen and (max-width: 1250px) {
+  article {
+    padding: 0 7%;
+  }
+}
+article .text {
+  justify-self: start;
+}
+article .photo {
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #e1e3e9;
+  max-height: 600px;
+  max-width: 500px;
+  min-height: 300px;
+}
+@media screen and (max-width: 960px) {
+  article .photo {
+    max-width: 100%;
+  }
+}
+article .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  width: 350px;
+  background-color: #e1e3e9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 20px 20px;
+  transition: all ease-in-out 0.4s;
+}
+.card:hover > .card-title h2::after {
+  transition: all ease-in-out 0.4s;
+  width: 100%;
+}
+.card .card-title {
+  margin-bottom: 20px;
+}
+.card .card-title h2 {
+  font-size: 22px;
+  line-height: 1em;
+  color: #353535;
+  margin: 0;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+.card .card-title h2::after {
+  transition: all ease-in-out 0.4s;
+  content: "";
+  position: relative;
+  display: block;
+  left: 0;
+  top: 7px;
+  height: 3px;
+  width: 40px;
+  background-color: #005EB8;
+}
+.card .card-photo {
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 0 20px;
+}
+.card .card-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card .card-btn {
+  width: 70%;
+  height: 40px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transition: ease-out 0.1s;
+  margin: 0 auto;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.card .card-btn p {
+  margin: 0;
+  color: #222222;
+}
+.card .card-btn:hover > p {
+  transition: ease-out 0.1s;
+  color: #005EB8;
+}
+.card .card-btn:hover {
+  border: 2px solid #005EB8;
+  transition: ease-out 0.1s;
+}
+.card:nth-child(2n) .card-title h2::after {
+  background-color: #FFD101;
+}
+.card:nth-child(2n) .card-btn:hover {
+  border: 2px solid #FFD101;
+  transition: ease-out 0.1s;
+}
+.card:nth-child(2n) .card-btn:hover > p {
+  transition: ease-out 0.1s;
+  color: #FFD101;
+}
